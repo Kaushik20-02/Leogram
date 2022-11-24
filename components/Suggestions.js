@@ -25,7 +25,7 @@ const Suggestions = () => {
       </div>
 
       {suggestions.map((profile) => (
-        <div className="flex items-center justify-between mt-6">
+        <div key={profile.id} className="flex items-center justify-between mt-6">
           <div className="flex items-center">
             <div className="w-8 h-8 ">
               <img src={profile.avatar} alt="" className="
