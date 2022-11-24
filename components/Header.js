@@ -59,7 +59,8 @@ const Header = () => {
             <img src={session?.user?.image}
              className='w-[2rem] rounded-full'/>
         </div>
-        <button className=' font-medium text-[#b368ff]'>
+        <button className=' font-medium text-[#b368ff]'
+        onClick={signIn}>
             Sign out</button>
       </div>
     </div>
