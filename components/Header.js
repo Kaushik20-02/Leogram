@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Image from 'next/image'
 import { IoIosArrowDown } from 'react-icons/io';
 import { BiSearchAlt } from 'react-icons/bi';
 import { BiHomeCircle } from 'react-icons/bi';
@@ -81,7 +82,7 @@ const Header = () => {
         <div className='' onClick={signIn}>
           {/* if session or user not defined (?)*/}
             <img src={session?.user?.image}
-             className='w-[2rem] rounded-full'/>
+             className='w-[2rem] rounded-full' alt="" />
         </div>
         <button className=' font-medium text-[#b368ff]'
         onClick={signIn}>

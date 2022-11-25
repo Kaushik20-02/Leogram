@@ -83,7 +83,7 @@ img}) => {
        <div className='flex items-center p-3'>
         <div className='flex items-center w-full'>
         <div className='h-9 w-9 mr-3'>
-            <img src = {userImg} className='rounded-full'/>
+            <img src = {userImg} className='rounded-full' alt="" />
         </div>
         <div className=''>
             <p className='font-semibold text-sm'>{username}</p>
@@ -99,7 +99,7 @@ img}) => {
        firebase*/}
        <div>
             <img src={img} 
-             className=' w-full rounded-[1rem]'/> 
+             className=' w-full rounded-[1rem]' alt="" /> 
        </div>
 
        {/* Button*/}
@@ -138,7 +138,7 @@ img}) => {
           <div className='flex justify-between mx-4 p-1'>
             <div className='flex items-center truncate gap-2'>
             <div className="w-6 h-6">
-                  <img src={comment.data().image} className="rounded-full" />
+                  <img src={comment.data().image} className="rounded-full" alt="" />
             </div>
               <p className='customfont'>{comment.data().username}</p>
               <p className='truncate'>{comment.data().comment}</p>

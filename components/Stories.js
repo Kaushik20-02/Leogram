@@ -54,7 +54,7 @@ const Stories = () => {
               <img
                 src={session?.user?.image}
                 className="rounded-full object-cover
-                p-[1px] border-[4px] border-[#b368ff]"/>
+                p-[1px] border-[4px] border-[#b368ff]" alt="" />
             </div>
             <div className='absolute -mt-5 pl-8 z-10'>
             <BsPatchPlusFill className='text-[#b7495d] w-6 h-5'/>

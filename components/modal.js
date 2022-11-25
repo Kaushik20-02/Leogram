@@ -144,7 +144,7 @@ export default function MyModal() {
                     {image ?(
                       <div className='' onClick={()=>
                       setImage('')}>
-                        <img src={image} className='rounded-[1.3rem]'/>
+                        <img src={image} className='rounded-[1.3rem]' alt="" />
                       </div>
                     ):('')}
                   </div>
