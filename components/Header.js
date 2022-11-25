@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 import { IoIosArrowDown } from 'react-icons/io';
 import { BiSearchAlt } from 'react-icons/bi';
 import { BiHomeCircle } from 'react-icons/bi';
