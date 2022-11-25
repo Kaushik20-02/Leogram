@@ -13,7 +13,7 @@ const Feed = () => {
         {/* Suggestions*/}
             <Suggestions/>
       </section>
-      <section className='max-w-[670px] mx-auto w-[100vw]'>
+      <section className='max-w-[670px] mx-auto -ml-6 w-[100vw]'>
         {/* Stories*/}
             <Stories/>
         {/* Posts*/}

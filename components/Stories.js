@@ -36,7 +36,7 @@ const Stories = () => {
             <div className='absolute -mt-5 pl-8 z-10'>
             <BsPatchPlusFill className='text-[#b7495d] w-6 h-5'/>
             </div>
-            <p className='pl-5 text-xs '>
+            <p className='pl-1 text-xs '>
         {session?.user?.name}</p>
         </div>
 

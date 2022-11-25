@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import instagram from '../assests/instagram.png'
 import { IoIosArrowDown } from 'react-icons/io';
 import { BiSearchAlt } from 'react-icons/bi';
 import { BiHomeCircle } from 'react-icons/bi';
@@ -19,13 +18,14 @@ const Header = () => {
   console.log(session)
 
   return (
-    <div className='flex items-center justify-between
+    <div className='flex items-center justify-between gap-4
     border-b shadow-sm lg:mx-[3rem] lg:mt-2 sticky
-    top-0 bg-gradient-to-r from-gray-300 z-10 rounded'>
+    top-0 bg-gradient-to-r from-gray-300 z-10 rounded-[1.2rem]'>
       {/* Left */}
       <div className='flex gap-1 pt-4 items-center'>
-        <div className='w-[8rem] '>
-            <Image src={instagram}/>
+        <div className='pl-3 pb-1'>
+          <p className='font-bold text-[2rem]'>
+            Leo<span className='text-purple-500'>gram</span></p>
         </div>
         <div className='h-3 w-3'>
             <IoIosArrowDown/>
@@ -43,7 +43,7 @@ const Header = () => {
       </div>
 
       {/* Right */}
-      <div className='flex gap-3 items-center lg:gap-6'>
+      <div className='flex gap-2 pt-3 items-center lg:gap-6'>
         <div className='flex gap-3 text-[1.3rem] lg:gap-5'>
         <BiHomeCircle className=' hidden sm:flex cursor-pointer'/>
         <FiSend className='hidden sm:flex cursor-pointer'/>
