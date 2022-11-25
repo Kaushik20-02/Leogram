@@ -81,8 +81,8 @@ const Header = () => {
         </div>
         <div className='' onClick={signIn}>
           {/* if session or user not defined (?)*/}
-            <img src={session?.user?.image}
-             className='w-[2rem] rounded-full' alt="" />
+            <img src={session?.user?.image} alt='' 
+             className='w-[2rem] rounded-full'/>
         </div>
         <button className=' font-medium text-[#b368ff]'
         onClick={signIn}>
