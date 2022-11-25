@@ -1,5 +1,4 @@
 import React from 'react'
-import user from '../assests/user.png'
 import { useSession, signIn, signOut } from "next-auth/react";
 
 const MiniProfile = () => {
@@ -10,8 +9,8 @@ const MiniProfile = () => {
     <div className='flex items-center'>
 
       <div className=''>
-        <img src={session?.user?.image} 
-        className='w-10 h-10 rounded-full' alt="" />
+        <img src={session?.user?.image}  alt=""
+        className='w-10 h-10 rounded-full'/>
       </div>
 
       <p className='pl-3 text-sm font-semibold'>
