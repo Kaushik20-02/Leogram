@@ -77,7 +77,8 @@ img}) => {
   [db, id] )
 
   return (
-    <div className='border rounded-[1.6rem] my-3'>
+    <div className='border rounded-[1.6rem] my-3
+     dark:bg-black dark:text-white dark:border-[#b368ff]'>
        {/* Header*/}
        <div className='flex items-center p-3'>
         <div className='flex items-center w-full'>
@@ -86,7 +87,7 @@ img}) => {
         </div>
         <div className=''>
             <p className='font-semibold text-sm'>{username}</p>
-            <p className='text-xs'>Original Audio</p>
+            <p className='text-xs dark:text-[#b368ff]'>Original Audio</p>
         </div>
        </div>
        <div className='w-6 h-6'>
@@ -105,18 +106,18 @@ img}) => {
        <div className='m-4'>
        <div className='flex justify-between'>
         <div className='flex items-center gap-2'>
-          <div className='Btn' onClick={likePost}>
-            <Image src={hasLiked? hearth2: hearth}/>
+          <div className='Btn dark:bg-black' onClick={likePost}>
+            <Image src={hasLiked? hearth2: hearth}className='dark:bg-white p-[1px] rounded-full' />
           </div>
           <div className='Btn'>
-            <Image src={comment2}/>
+            <Image src={comment2} className='dark:bg-[#b368ff] rounded-full'/>
           </div>
           <div className='Btn'>
-            <Image src={message}/>
+            <Image src={message} className='dark:bg-[#b368ff] p-[1px] rounded-full'/>
           </div>
         </div>
         <div className='Btn'>
-            <Image src={save}/>
+            <Image src={save} className='dark:bg-[#b368ff] p-[1px] rounded-full'/>
           </div>
        </div>
        <div className='m-3 customfont'>
@@ -156,7 +157,7 @@ img}) => {
           <div className='flex justify-between p-2'>
             <div className='flex items-center ml-4'>
               <div className='Btn mr-2'>
-                <Image src={emojy}/>
+                <Image src={emojy} className='dark:bg-[#b368ff] rounded-full'/>
               </div>
               <input type="text" placeholder='Add a comment'
               className='outline-0 bg-slate-200 text-black

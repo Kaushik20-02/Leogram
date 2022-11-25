@@ -5,8 +5,9 @@ export default function SignIn({ providers }) {
     <>
       {Object.values(providers).map((provider) => (
         <div key={provider.name}>
-          <div className="mt-10 flex flex-col items-center
-          ">
+          <div className="mt-8 flex flex-col items-center
+          border-dotted border-4 p-40 mx-8
+           border-purple-500 rounded-[2rem]">
           <div className="">
           <p className='font-bold text-[3.5rem]'>
             Leo<span className='text-purple-500'>gram</span></p> 

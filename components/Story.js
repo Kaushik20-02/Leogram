@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Story = ({username,avatar}) => {
+
   return (
     <div>
       <img src={avatar} className='rounded-full 

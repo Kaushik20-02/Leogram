@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { IoIosArrowDown } from 'react-icons/io';
 import { BiSearchAlt } from 'react-icons/bi';
 import { BiHomeCircle } from 'react-icons/bi';
 import { FiSend } from 'react-icons/fi';
+import { MdOutlineLightMode } from 'react-icons/md';
 import { FaDraftingCompass } from 'react-icons/fa';
 import { FcLikePlaceholder } from 'react-icons/fc';
 import { BiMessageSquareAdd } from 'react-icons/bi';
@@ -17,10 +18,32 @@ const Header = () => {
   console.log(open)
   console.log(session)
 
+  const [theme, setTheme] = useState(null);
+
+  useEffect(() => {
+    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      setTheme('dark');
+    }
+    else {
+      setTheme('light');
+    }
+  }, [])
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <div className='flex items-center justify-between gap-4
-    border-b shadow-sm lg:mx-[3rem] lg:mt-2 sticky
-    top-0 bg-gradient-to-r from-gray-300 z-10 rounded-[1.2rem]'>
+    border-b shadow-sm sm:-mx-[2rem] lg:mx-[3rem] lg: sticky
+    top-0 bg-gradient-to-r from-gray-200 z-10 rounded-[1.2rem]'>
       {/* Left */}
       <div className='flex gap-1 pt-4 items-center'>
         <div className='pl-3 pb-1'>
@@ -45,14 +68,16 @@ const Header = () => {
       {/* Right */}
       <div className='flex gap-2 pt-3 items-center lg:gap-6'>
         <div className='flex gap-3 text-[1.3rem] lg:gap-5'>
-        <BiHomeCircle className=' hidden sm:flex cursor-pointer'/>
-        <FiSend className='hidden sm:flex cursor-pointer'/>
+        <BiHomeCircle className=' hidden dark:text-slate-200 sm:flex cursor-pointer'/>
+        <FiSend className='hidden dark:text-slate-200 sm:flex cursor-pointer'/>
+        <div className='dark:text-slate-200' onClick={handleThemeSwitch}>
+          <MdOutlineLightMode className='cursor-pointer'/></div>
 
-        <BiMessageSquareAdd className='cursor-pointer'
+        <BiMessageSquareAdd className='cursor-pointer dark:text-slate-200'
          onClick={()=> setOpen(!open)}/>
 
         <FcLikePlaceholder className='hidden sm:flex cursor-pointer'/>
-        <FaDraftingCompass className='hidden sm:flex cursor-pointer'/>
+        <FaDraftingCompass className='hidden sm:flex cursor-pointer dark:text-slate-200'/>
         </div>
         <div className='' onClick={signIn}>
           {/* if session or user not defined (?)*/}

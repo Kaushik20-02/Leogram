@@ -19,11 +19,34 @@ const Stories = () => {
       );
     }, []); {/* [] Empty for never ending loop */}
     console.log(stories)
+
+    const [theme, setTheme] = useState(null);
+
+    useEffect(() => {
+      if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+        setTheme('dark');
+      }
+      else {
+        setTheme('light');
+      }
+    }, [])
+    useEffect(() => {
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    }, [theme]);
+  
+    const handleThemeSwitch = () => {
+      setTheme(theme === 'dark' ? "light" : "dark");
+    };
   return (
-    <div>
+    <div className=''>
       <div className=' flex gap-4 bg-gray-200 p-5
       overflow-x-scroll rounded-xl scrollbar-thin
-       scrollbar-thumb-gray-300'>
+       scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-500
+        dark:bg-black dark:text-white'>
 
         <div className='relative z-3'>
             <div className="flex flex-col rounded-full mt-1 w-14 h-14
