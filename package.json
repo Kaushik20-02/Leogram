@@ -16,6 +16,7 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.4",
     "firebase": "^9.14.0",
+    "hooks": "^0.3.2",
     "moment": "^2.29.4",
     "next": "13.0.4",
     "next-auth": "^4.17.0",

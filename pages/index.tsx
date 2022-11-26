@@ -7,9 +7,8 @@ import Modal from '../components/modal'
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [theme, setTheme] = useState('dark');
-
-  useEffect(() => {
+  
+ /* useEffect(() => {
     if(window.matchMedia('(prefers-color-scheme: dark)').matches){
       setTheme('dark');
     }
@@ -27,7 +26,7 @@ export default function Home() {
 
   const handleThemeSwitch = () => {
     setTheme(theme === 'dark' ? "light" : "dark");
-  };
+  }; */ 
   return (
     <div className=' bg-white dark:bg-gray-800'>
     <div className={styles.container}>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
 import { IoIosArrowDown } from 'react-icons/io';
 import { BiSearchAlt } from 'react-icons/bi';
 import { BiHomeCircle } from 'react-icons/bi';
@@ -11,6 +10,7 @@ import { BiMessageSquareAdd } from 'react-icons/bi';
 import { useRecoilState } from 'recoil';
 import {modalState} from '../atoms/modalState'
 import { useSession, signIn, signOut } from "next-auth/react";
+import useTheme from '../components/useTheme'
 
 const Header = () => {
   const { data: session } = useSession();
@@ -18,27 +18,9 @@ const Header = () => {
   console.log(open)
   console.log(session)
 
-  const [theme, setTheme] = useState(null);
 
-  useEffect(() => {
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-      setTheme('dark');
-    }
-    else {
-      setTheme('light');
-    }
-  }, [])
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
+  const[nextTheme,setTheme] = useTheme()
 
-  const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <div className='flex items-center justify-between gap-4
@@ -70,7 +52,8 @@ const Header = () => {
         <div className='flex gap-3 text-[1.3rem] lg:gap-5'>
         <BiHomeCircle className=' hidden dark:text-slate-200 sm:flex cursor-pointer'/>
         <FiSend className='hidden dark:text-slate-200 sm:flex cursor-pointer'/>
-        <div className='dark:text-slate-200' onClick={handleThemeSwitch}>
+        <div className='dark:text-slate-200'
+         onClick={()=> setTheme(nextTheme)}>
           <MdOutlineLightMode className='cursor-pointer'/></div>
 
         <BiMessageSquareAdd className='cursor-pointer dark:text-slate-200'
