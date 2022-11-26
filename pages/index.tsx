@@ -1,32 +1,11 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Header from '../components/Header'
 import Feed from '../components/Feed'
 import Modal from '../components/modal'
-import { useState, useEffect } from "react";
 
 export default function Home() {
   
- /* useEffect(() => {
-    if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-      setTheme('dark');
-    }
-    else {
-      setTheme('light');
-    }
-  }, [])
-  useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-
-  const handleThemeSwitch = () => {
-    setTheme(theme === 'dark' ? "light" : "dark");
-  }; */ 
   return (
     <div className=' bg-white dark:bg-gray-800'>
     <div className={styles.container}>

@@ -18,9 +18,8 @@ const Header = () => {
   console.log(open)
   console.log(session)
 
-
+  //dark mode
   const[nextTheme,setTheme] = useTheme()
-
 
   return (
     <div className='flex items-center justify-between gap-4
