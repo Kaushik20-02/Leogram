@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSession, signIn, signOut } from "next-auth/react";
+import Image from 'next/image';
 
 const MiniProfile = () => {
   const { data: session } = useSession();
@@ -9,7 +10,7 @@ const MiniProfile = () => {
     <div className='flex items-center'>
 
       <div className=''>
-        <img src={session?.user?.image}  alt=""
+        <img src={session?.user?.image} alt=""
         className='w-10 h-10 rounded-full'/>
       </div>
 
