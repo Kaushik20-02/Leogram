@@ -7,7 +7,7 @@ import Modal from '../components/modal'
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
     if(window.matchMedia('(prefers-color-scheme: dark)').matches){
